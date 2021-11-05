@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Covid for the day</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="main.js"></script>
+    <link rel="shortcut icon" href="./Assets/icon.png" />
+    <script
+      src="https://kit.fontawesome.com/1e592b5726.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="main">
+      <nav>
+        <div class="logo">
+          <img src="/Assets/logo.png" />
+        </div>
+        <div class="nav-links">
+          <ul>
+            <li class="covidInput">
+              Escolha um país:
+              <select class="form-control" id="countries">
+                <option>Escolha um país</option>
+              </select>
+            </li>
+
+            <li class="text-center">
+              <p class="marginTopBottom" id="covidNewConfirmed">
+                New confirmed cases: /
+              </p>
+              <p class="marginTopBottom" id="covidTotalConfirmed">
+                Total confirmed cases: /
+              </p>
+              <p class="marginTopBottom" id="covidNewDeaths">New deaths: /</p>
+              <p class="marginTopBottom" id="covidTotalDeaths">
+                Total deaths: /
+              </p>
+              <p class="marginTopBottom" id="covidLastUpdate">
+                Last updated: /
+              </p>
+            </li>
+            <li><button onclick="abrir()" id="open">Sobre nós</button></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="information">
+        <div class="overlay"></div>
+        <img src="/Assets/coronavirus.png" class="mobile" />
+        <div id="circle">
+          <div class="feature one">
+            <img src="/Assets/rotate.png" />
+            <div>
+              <h1>Propósito:</h1>
+              <p>
+                Trazer informações atualizadas do paises relação ao Covid-19
+              </p>
+            </div>
+          </div>
+          <div class="feature two">
+            <img src="/Assets/rotate.png" />
+            <div>
+              <h1>Veracidade:</h1>
+              <p>Mostrando informações diarias a respeito do Covid-19</p>
+            </div>
+          </div>
+          <div class="feature three">
+            <img src="/Assets/rotate.png" />
+            <div>
+              <h1>Fonte:</h1>
+              <a
+                style="text-decoration: none; color: white"
+                href="https://rapidapi.com/api-sports/api/COVID-19"
+                >Fonte de Dados Covid-19</a
+              >
+            </div>
+          </div>
+          <div class="feature four">
+            <img src="/Assets/rotate.png" />
+            <div>
+              <h1>Sobre nós:</h1>
+              <p>
+                Clique no botão acima para saber mais a respeito do nosso
+                projeto
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-container" id="modal_container">
+      <div class="modal">
+        <h1>Nós somos</h1>
+        <p>Alunos do Curso de ciências da computação da UNICAP</p>
+        <p>André,Lucas e Daylton, respectivamente:</p>
+        <img class="photos" src="/Assets/andre.jfif" />
+        <img class="photos" src="/Assets/lucas.jfif" />
+        <img class="photos" src="/Assets/douglas.png" />
+        <h1>Objetivo Principal da Atividade</h1>
+        <p>
+          Projeto para ser implementado uma API, com o intuito de apresentar
+          dados diários sobre a relação dos paises com a Covid-19
+        </p>
+        <p>Ferramentas utilizadas a seguir:</p>
+        <h1>HTML|CSS|JAVASCRIPT</h1>
+        <p>
+          Conceitos como <b>Glassmorphism</b>,<b>Animation</b> foram utilizados,
+          além da manipulação de arrays e dos requerimentos para uma API externa
+          através do Fetch.
+        </p>
+
+        <button onclick="fechar()" id="close">Voltar para a Home</button>
+      </div>
+    </div>
+
+    <div class="controls">
+      <img src="/Assets/arrow.png" id="upBtn" />
+      <h3>Objetivos</h3>
+      <img src="/Assets/arrow.png" id="downBtn" />
+    </div>
+    <script>
+      var circle = document.getElementById("circle");
+      var upBtn = document.getElementById("upBtn");
+      var downBtn = document.getElementById("downBtn");
+
+      var rotateValue = circle.style.transform;
+      var rotateSum;
+
+      upBtn.onclick = function () {
+        rotateSum = rotateValue + "rotate(-90deg)";
+        circle.style.transform = rotateSum;
+        rotateValue = rotateSum;
+      };
+
+      downBtn.onclick = function () {
+        rotateSum = rotateValue + "rotate(90deg)";
+        circle.style.transform = rotateSum;
+        rotateValue = rotateSum;
+      };
+    </script>
+  </body>
+</html>
