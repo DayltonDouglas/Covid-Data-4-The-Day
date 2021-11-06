@@ -29,8 +29,11 @@ nav {
   flex: 1;
   text-align: right;
 }
-
+.nav-links ul .covid-input {
+  position: absolute;
+}
 .nav-links ul li {
+  position: inherit;
   list-style: none;
   display: inline-block;
   padding: 60px;
@@ -117,8 +120,9 @@ nav {
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   padding: 50px 80px;
-
   text-align: center;
+  -webkit-animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 .modal h1 {
   margin: 0;
@@ -139,6 +143,7 @@ nav {
   width: 1000px;
   height: 1000px;
   position: absolute;
+  pointer-events: stroke;
   top: 50%;
   left: -10%;
   transform: translateY(-50%);
@@ -166,6 +171,9 @@ nav {
 }
 .feature div p {
   margin-top: 8px;
+}
+.feature div a {
+  cursor: pointer;
 }
 .one {
   top: 450px;
@@ -234,62 +242,36 @@ nav {
 #countries {
   margin-left: 20px;
   width: 30%;
+  font-size: 15px;
+
+  color: white;
+}
+.nav-links ul li select option {
+  background-color: black;
+  color: white;
 }
 
-.mySeparator {
-  height: 0.5px;
-  width: 80%;
-  background-color: whitesmoke;
-}
-@-webkit-keyframes vibrate-1 {
+@-webkit-keyframes slide-in-top {
   0% {
-    -webkit-transform: translate(0);
-    transform: translate(0);
-  }
-  20% {
-    -webkit-transform: translate(-2px, 2px);
-    transform: translate(-2px, 2px);
-  }
-  40% {
-    -webkit-transform: translate(-2px, -2px);
-    transform: translate(-2px, -2px);
-  }
-  60% {
-    -webkit-transform: translate(2px, 2px);
-    transform: translate(2px, 2px);
-  }
-  80% {
-    -webkit-transform: translate(2px, -2px);
-    transform: translate(2px, -2px);
+    -webkit-transform: translateY(-1000px);
+    transform: translateY(-1000px);
+    opacity: 0;
   }
   100% {
-    -webkit-transform: translate(0);
-    transform: translate(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
   }
 }
-@keyframes vibrate-1 {
+@keyframes slide-in-top {
   0% {
-    -webkit-transform: translate(0);
-    transform: translate(0);
-  }
-  20% {
-    -webkit-transform: translate(-2px, 2px);
-    transform: translate(-2px, 2px);
-  }
-  40% {
-    -webkit-transform: translate(-2px, -2px);
-    transform: translate(-2px, -2px);
-  }
-  60% {
-    -webkit-transform: translate(2px, 2px);
-    transform: translate(2px, 2px);
-  }
-  80% {
-    -webkit-transform: translate(2px, -2px);
-    transform: translate(2px, -2px);
+    -webkit-transform: translateY(-1000px);
+    transform: translateY(-1000px);
+    opacity: 0;
   }
   100% {
-    -webkit-transform: translate(0);
-    transform: translate(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
   }
 }
