@@ -7,4 +7,4 @@ Dados e Informações a respeito da Covid-19 pelo mundo
 
 **Através de uma atividade requerida para se obter uma resposta e uso de API**
 
--Realizamos a integração de uma API que tem sido bastante util para aqueles que desejam saber como anda a pandemia pelos países a fora
+-Realizamos a integração de uma API que tem sido bastante util para aqueles que desejam saber como anda a pandemia e as estatísticas pelos países a fora
